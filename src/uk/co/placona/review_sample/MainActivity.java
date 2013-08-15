@@ -12,7 +12,6 @@ import uk.co.placona.ReviewRestClient.ReviewJsonHandler;
 import uk.co.placona.ReviewRestClient.ReviewRestClient;
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -57,7 +56,7 @@ public class MainActivity extends Activity implements OnDownloadListener {
     }
     
     private Review convertReview(JSONObject obj) throws JSONException{   	
-		return new Review(obj.getString("name"), obj.getString("text"));    	
+		return new Review(obj.getString("chartDate"), obj.getString("retrieved"));    	
     }
     
 	public void onDownloadSuccess(JSONObject myObj) {
@@ -67,7 +66,7 @@ public class MainActivity extends Activity implements OnDownloadListener {
 		JSONArray jArrayObject = new JSONArray();
 		//jArrayObject.put(myObj);
 		jArrayObject.put(fakeJsonObject());
-		Log.d("aaa", jArrayObject.toString());
+		
 		// Populate review
 		for (int i=0; i < jArrayObject.length(); i++) {
 			try {
