@@ -44,35 +44,35 @@ public class MainActivity extends Activity implements OnDownloadListener {
         
     }
     
-    private JSONObject fakeJsonObject(){
-    	JSONObject object = null;
+    private JSONArray fakeJsonObject(){
+    	JSONArray object = null;
+		String s = "[{\"id\":1,\"name\":\"Marcos\",\"text\":\"This is some text\",\"created_at\":\"2013-08-14T08:37:05+01:00\",\"updated_at\":\"2013-08-14T08:37:05+01:00\"},{\"id\":2,\"name\":\"Marcos\",\"text\":\"This is some text\",\"created_at\":\"2013-08-14T08:37:36+01:00\",\"updated_at\":\"2013-08-14T08:37:36+01:00\"},{\"id\":3,\"name\":\"Marcos\",\"text\":\"another review updated\",\"created_at\":\"2013-08-14T08:48:50+01:00\",\"updated_at\":\"2013-08-14T08:48:50+01:00\"}]";
 		try {
-			object = new JSONObject("{\"reviews\":[{\"name\":\"Mike Rotch\",\"text\":\"Hell of a happy customer\"},{\"name\":\"John Doe\",\"text\":\"My happy review\"}]}");
+			object = new JSONArray(s);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		return object;
     }
     
     private Review convertReview(JSONObject obj) throws JSONException{   	
-		return new Review(obj.getString("chartDate"), obj.getString("retrieved"));    	
+		return new Review(obj.getString("name"), obj.getString("text"));    	
     }
     
 	public void onDownloadSuccess(JSONObject myObj) {
 		List<Review> result = new ArrayList<Review>();
 		
 		// convert object to array
-		JSONArray jArrayObject = new JSONArray();
-		//jArrayObject.put(myObj);
-		jArrayObject.put(fakeJsonObject());
+		JSONArray jArrayObject = fakeJsonObject();
 		
 		// Populate review
 		for (int i=0; i < jArrayObject.length(); i++) {
 			try {
 				result.add(convertReview(jArrayObject.getJSONObject(i)));
 			} catch (JSONException e) {
-				// TODO Auto-generated catch block
+				// TODO Auto-generated catch block 
 				e.printStackTrace();
 			}
 		}
