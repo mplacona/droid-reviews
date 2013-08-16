@@ -1,5 +1,8 @@
 package uk.co.placona.ReviewRestClient;
 
+import android.util.Log;
+
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import uk.co.placona.review_sample.MainActivity;
@@ -13,8 +16,8 @@ public class ReviewJsonHandler extends JsonHttpResponseHandler{
 		this.activity = activity;	
 	}
 	
-	public void onSuccess(JSONObject myObj){
-		activity.onDownloadSuccess(myObj);
+	public void onSuccess(JSONArray reviews){
+		activity.onDownloadSuccess(reviews);
 	}
 	
 	public void onFailure(Throwable arg0, JSONObject arg1) {
