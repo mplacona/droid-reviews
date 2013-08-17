@@ -12,15 +12,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import uk.co.placona.ReviewRestClient.OnDownloadListener;
+import uk.co.placona.ReviewRestClient.IDownloadListener;
 import uk.co.placona.ReviewRestClient.ReviewJsonHandler;
 import uk.co.placona.ReviewRestClient.ReviewRestClient;
 
-public class MainActivity extends Activity implements OnDownloadListener {
-	ReviewRestClient reviewRestClient;
-	ReviewJsonHandler reviewJsonHandler;
-	ReviewAdapter adpt;
-	EditText txt;
+public class MainActivity extends Activity implements IDownloadListener {
+    private ReviewAdapter adpt;
+	private EditText txt;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,9 +30,9 @@ public class MainActivity extends Activity implements OnDownloadListener {
         ListView lView = (ListView) findViewById(R.id.listView1);
         
         lView.setAdapter(adpt);
-        
-        reviewJsonHandler = new ReviewJsonHandler(this);
-        reviewRestClient = new ReviewRestClient();
+
+        ReviewJsonHandler reviewJsonHandler = new ReviewJsonHandler(this);
+        ReviewRestClient reviewRestClient = new ReviewRestClient();
         
         try{
         	reviewRestClient.getReviews("reviews", reviewJsonHandler);

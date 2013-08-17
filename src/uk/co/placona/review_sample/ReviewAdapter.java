@@ -1,7 +1,5 @@
 package uk.co.placona.review_sample;
 
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class ReviewAdapter extends ArrayAdapter<Review> {
 
 	private List<Review> reviewList;
-	private Context context;
+	private final Context context;
 	
 	public ReviewAdapter(List<Review> reviewList, Context ctx) {
 		super(ctx, android.R.layout.simple_list_item_1, reviewList);
@@ -54,12 +54,8 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
 
 		return v;
 	}
-	
-	public List<Review> getItemList(){
-		return reviewList;
-	}
-	
-	public void setItemList(List<Review> itemList) {
+
+    public void setItemList(List<Review> itemList) {
 		this.reviewList = itemList;
 	}
 }

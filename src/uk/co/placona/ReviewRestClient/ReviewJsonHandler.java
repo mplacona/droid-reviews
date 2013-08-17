@@ -10,7 +10,7 @@ import uk.co.placona.review_sample.MainActivity;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 public class ReviewJsonHandler extends JsonHttpResponseHandler{
-	MainActivity activity;
+	private final MainActivity activity;
 	
 	public ReviewJsonHandler(MainActivity activity){
 		this.activity = activity;	
