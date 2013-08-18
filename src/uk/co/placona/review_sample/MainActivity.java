@@ -20,14 +20,12 @@ public class MainActivity extends Activity implements OnDownloadListener {
 	ReviewRestClient reviewRestClient;
 	ReviewJsonHandler reviewJsonHandler;
 	ReviewAdapter adpt;
-	EditText txt;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txt = (EditText) this.findViewById(R.id.editText1);
         adpt  = new ReviewAdapter(new ArrayList<Review>(), this);
         ListView lView = (ListView) findViewById(R.id.listView1);
         
@@ -60,7 +58,7 @@ public class MainActivity extends Activity implements OnDownloadListener {
 			}
 		}
 		adpt.setItemList(result);
-		txt.setText(reviews.toString());
+        adpt.notifyDataSetChanged();
 	}
 
 	public void onDownloadFailure() {
