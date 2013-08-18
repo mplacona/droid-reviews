@@ -1,18 +1,16 @@
 package uk.co.placona.ReviewRestClient;
 
-import android.util.Log;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import uk.co.placona.review_sample.MainActivity;
-
-import com.loopj.android.http.JsonHttpResponseHandler;
+import uk.co.placona.review_sample.BaseActivity;
 
 public class ReviewJsonHandler extends JsonHttpResponseHandler{
-	MainActivity activity;
+    BaseActivity activity;
 	
-	public ReviewJsonHandler(MainActivity activity){
+	public ReviewJsonHandler(BaseActivity activity){
 		this.activity = activity;	
 	}
 	

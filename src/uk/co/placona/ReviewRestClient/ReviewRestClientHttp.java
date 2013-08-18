@@ -16,6 +16,11 @@ public class ReviewRestClientHttp {
         client.get(getAbsoluteUrl(url), params, responseHandler);
 	}
 
+    public static void post(String url, RequestParams params, AsyncHttpResponseHandler responseHandler){
+        client.setTimeout(3000);
+        client.post(getAbsoluteUrl(url), params, responseHandler);
+    }
+
 	private static String getAbsoluteUrl(String relativeUrl){
 		return BASE_URL + relativeUrl;
 	}

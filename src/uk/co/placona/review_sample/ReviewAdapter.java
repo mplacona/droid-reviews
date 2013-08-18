@@ -42,7 +42,7 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
 		View v = convertView;
 		if (v == null) {
 			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			v = inflater.inflate(R.layout.review_layout, null);
+			v = inflater.inflate(R.layout.review_adapter, null);
 		}
 		Review r = reviewList.get(position);
 		
