@@ -2,7 +2,6 @@ package uk.co.placona.review_sample;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -17,9 +16,9 @@ import uk.co.placona.ReviewRestClient.ReviewJsonHandler;
 import uk.co.placona.ReviewRestClient.ReviewRestClient;
 
 public class MainActivity extends Activity implements OnDownloadListener {
-	ReviewRestClient reviewRestClient;
-	ReviewJsonHandler reviewJsonHandler;
-	ReviewAdapter adpt;
+	private ReviewRestClient reviewRestClient;
+	private ReviewJsonHandler reviewJsonHandler;
+	private ReviewAdapter adpt;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

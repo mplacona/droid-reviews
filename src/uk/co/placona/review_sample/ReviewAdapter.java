@@ -55,10 +55,6 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
 		return v;
 	}
 	
-	public List<Review> getItemList(){
-		return reviewList;
-	}
-	
 	public void setItemList(List<Review> itemList) {
 		this.reviewList = itemList;
 	}
