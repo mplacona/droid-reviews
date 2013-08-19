@@ -9,6 +9,10 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import org.json.JSONArray;
+<<<<<<< HEAD
+=======
+import org.json.JSONObject;
+>>>>>>> patch_functionality
 
 import uk.co.placona.ReviewRestClient.IDownloadListener;
 
@@ -46,6 +50,14 @@ public class BaseActivity extends Activity implements IDownloadListener {
     }
 
     @Override
+<<<<<<< HEAD
+=======
+    public void onDownloadSuccess(JSONObject reviews) {
+
+    }
+
+    @Override
+>>>>>>> patch_functionality
     public void onDownloadFailure() {
 
     }

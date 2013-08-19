@@ -25,6 +25,10 @@
         <activity android:name=".CreateReviewActivity"/>
         <activity android:name=".BaseActivity"/>
         <activity android:name=".CreateReviewActionActivity"/>
+<<<<<<< HEAD
+=======
+        <activity android:name=".EditReviewActivity"/>
+>>>>>>> patch_functionality
     </application>
     
 </manifest>

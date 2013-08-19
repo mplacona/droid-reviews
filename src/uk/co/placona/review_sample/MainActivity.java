@@ -1,6 +1,13 @@
 package uk.co.placona.review_sample;
 
+<<<<<<< HEAD
 import android.os.Bundle;
+=======
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+>>>>>>> patch_functionality
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -28,6 +35,14 @@ public class MainActivity extends BaseActivity implements IDownloadListener {
         ListView lView = (ListView) findViewById(R.id.listView1);
         
         lView.setAdapter(adpt);
+        lView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intentEdit = new Intent(MainActivity.this, EditReviewActivity.class);
+                intentEdit.putExtra("id", Integer.toString(i));
+                startActivity(intentEdit);
+            }
+        });
         
         reviewJsonHandler = new ReviewJsonHandler(this);
         reviewRestClient = new ReviewRestClient();
