@@ -17,6 +17,10 @@ public class ReviewJsonHandler extends JsonHttpResponseHandler{
 	public void onSuccess(JSONArray reviews){
 		activity.onDownloadSuccess(reviews);
 	}
+
+    public void onSuccess(JSONObject reviews){
+        activity.onDownloadSuccess(reviews);
+    }
 	
 	public void onFailure(Throwable arg0, JSONObject arg1) {
 		super.onFailure(arg0, arg1);

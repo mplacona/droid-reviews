@@ -25,6 +25,7 @@
         <activity android:name=".CreateReviewActivity"/>
         <activity android:name=".BaseActivity"/>
         <activity android:name=".CreateReviewActionActivity"/>
+        <activity android:name=".EditReviewActivity"/>
     </application>
     
 </manifest>
