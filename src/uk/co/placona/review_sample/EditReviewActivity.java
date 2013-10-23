@@ -1,6 +1,5 @@
 package uk.co.placona.review_sample;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +7,6 @@ import android.widget.TextView;
 
 import com.loopj.android.http.RequestParams;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -52,7 +50,7 @@ public class EditReviewActivity extends BaseActivity implements IDownloadListene
     }
 
     private Review convertReview(JSONObject obj) throws JSONException{
-        return new Review(obj.getString("name"), obj.getString("text"));
+        return new Review(obj.getString("id"), obj.getString("name"), obj.getString("text"));
     }
 
 

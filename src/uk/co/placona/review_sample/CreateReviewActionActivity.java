@@ -8,7 +8,6 @@ import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import uk.co.placona.ReviewRestClient.IDownloadListener;
 import uk.co.placona.ReviewRestClient.ReviewJsonHandler;

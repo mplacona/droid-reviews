@@ -35,7 +35,8 @@ public class MainActivity extends BaseActivity implements IDownloadListener {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intentEdit = new Intent(MainActivity.this, EditReviewActivity.class);
-                intentEdit.putExtra("id", Integer.toString(i));
+                String id = (String)view.getTag();
+                intentEdit.putExtra("id", id);
                 startActivity(intentEdit);
             }
         });
@@ -52,7 +53,7 @@ public class MainActivity extends BaseActivity implements IDownloadListener {
     }
 
     private Review convertReview(JSONObject obj) throws JSONException{   	
-		return new Review(obj.getString("name"), obj.getString("text"));    	
+		return new Review(obj.getString("id"),obj.getString("name"), obj.getString("text"));
     }
     
 	public void onDownloadSuccess(JSONArray reviews) {

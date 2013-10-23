@@ -52,6 +52,8 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
 		TextView text1 = (TextView) v.findViewById(R.id.review);
 		text1.setText(r.getText());
 
+        v.setTag(r.getId());
+
 		return v;
 	}
 	
